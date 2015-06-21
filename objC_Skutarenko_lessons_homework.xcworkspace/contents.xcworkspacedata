@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:lesson5/lesson5.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "Docs">
+      <FileRef
+         location = "group:../../_&#x441;&#x442;&#x440;&#x443;&#x43a;&#x442;&#x443;&#x440;&#x430; &#x43f;&#x430;&#x43f;&#x43e;&#x43a; &#x434;&#x43b;&#x44f; &#x43f;&#x440;&#x43e;&#x435;&#x43a;&#x442;&#x43e;&#x432;/&#x440;&#x430;&#x437;&#x43c;&#x435;&#x442;&#x43a;&#x430; &#x444;&#x430;&#x438;&#x306;&#x43b;&#x43e;&#x432; &#x434;&#x43b;&#x44f; objC.rtf">
+      </FileRef>
+      <FileRef
+         location = "group:../../_&#x441;&#x442;&#x440;&#x443;&#x43a;&#x442;&#x443;&#x440;&#x430; &#x43f;&#x430;&#x43f;&#x43e;&#x43a; &#x434;&#x43b;&#x44f; &#x43f;&#x440;&#x43e;&#x435;&#x43a;&#x442;&#x43e;&#x432;/&#x441;&#x442;&#x440;&#x443;&#x43a;&#x442;&#x443;&#x440;&#x430; &#x444;&#x430;&#x438;&#x306;&#x43b;&#x430; objC.rtf">
+      </FileRef>
+   </Group>
+</Workspace>
