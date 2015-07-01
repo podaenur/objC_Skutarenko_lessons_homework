@@ -19,10 +19,16 @@
 #pragma mark - Protocol conformance
 #pragma mark EVARunnersProtocol
 
-@synthesize distance, type;
+@synthesize distance, raceType;
 
 - (CGFloat)makeRun {
-  return (self.type == EVARaceTypeSector) ? 4.3f : 2.1f;
+  if (self.raceType == EVARaceTypeSector) {
+    return 4.3f;
+  } else if (self.raceType == EVARaceTypeCircuit) {
+    return 2.1f;
+  } else {
+    return 0.f;
+  }
 }
 
 @end

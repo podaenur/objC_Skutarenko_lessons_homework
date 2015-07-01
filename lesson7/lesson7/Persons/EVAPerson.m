@@ -8,6 +8,14 @@
 
 #import "EVAPerson.h"
 
+NSString * NSStringFromEVAPersonSex(EVAPersonSex aSex) {
+  switch (aSex) {
+    case EVAPersonSexMan: return @"Man"; break;
+    case EVAPersonSexWoman: return @"Woman"; break;
+    default: return nil; break;
+  }
+}
+
 @implementation EVAPerson
 
 + (instancetype)createPersonWithName:(NSString *)aName height:(CGFloat)aHeight weight:(CGFloat)aWeight sex:(NSString *)aSex {

@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Eugeny Akhmerov. All rights reserved.
 //
 
+#define Y_OR_N_STR(bool_arg) bool_arg == 0 ? @"NO" : bool_arg == 1 ? @"YES" : @"error unwrap"
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 

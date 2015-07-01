@@ -18,7 +18,7 @@ typedef NS_OPTIONS(NSUInteger, EVARaceType) {
 
 @required
 @property (nonatomic, assign) CGFloat distance;
-@property (nonatomic, assign) EVARaceType type;
+@property (nonatomic, assign) EVARaceType raceType;
 
 - (CGFloat)makeRun;
 

@@ -8,7 +8,12 @@
 
 #import "EVAAnimal.h"
 #import "EVAJumpersProtocol.h"
+#import "EVASwimmersProtocol.h"
 
 @interface EVADog : EVAAnimal <EVAJumpersProtocol>
+
+@end
+
+@interface EVADog () <EVASwimmersProtocol>
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "EVAPerson.h"
+#import "EVASwimmersProtocol.h"
 
-@interface EVASwimmer : EVAPerson
+@interface EVASwimmer : EVAPerson <EVASwimmersProtocol>
 
 @end

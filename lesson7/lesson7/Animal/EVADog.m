@@ -25,4 +25,16 @@
   return (arc4random()%5 + (arc4random()%10) / 10);
 }
 
+#pragma mark EVASwimmersProtocol
+
+@synthesize speed, underWaterSwim;
+
+- (CGFloat)makeSwim {
+  return 3.2f;
+}
+
+- (void)makeScream {
+  NSLog(@"Gav, Gav...\n");
+}
+
 @end

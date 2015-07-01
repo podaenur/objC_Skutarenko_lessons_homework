@@ -16,4 +16,13 @@
   NSLog(@"Water is the best environment to sport.\n");
 }
 
+#pragma mark - Protocol conformance
+#pragma mark EVASwimmersProtocol
+
+@synthesize speed, underWaterSwim;
+
+- (CGFloat)makeSwim {
+  return 1.2f;
+}
+
 @end

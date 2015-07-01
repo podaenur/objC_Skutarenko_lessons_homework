@@ -7,7 +7,13 @@
 //
 
 #import "EVAPerson.h"
+#import "EVARunnersProtocol.h"
+#import "EVAJumpersProtocol.h"
 
-@interface EVARunner : EVAPerson
+@interface EVARunner : EVAPerson <EVARunnersProtocol>
+
+@end
+
+@interface EVARunner () <EVAJumpersProtocol>
 
 @end

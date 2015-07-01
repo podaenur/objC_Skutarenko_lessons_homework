@@ -20,6 +20,7 @@
 		049759A81B43D84B009EBC06 /* EVAPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497599D1B43D84B009EBC06 /* EVAPerson.m */; };
 		049759A91B43D84B009EBC06 /* EVARunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497599F1B43D84B009EBC06 /* EVARunner.m */; };
 		049759AA1B43D84B009EBC06 /* EVASwimmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 049759A21B43D84B009EBC06 /* EVASwimmer.m */; };
+		04AC351A1B446173003BC148 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AC35191B446173003BC148 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		049759A01B43D84B009EBC06 /* EVASportsmen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVASportsmen.h; sourceTree = "<group>"; };
 		049759A11B43D84B009EBC06 /* EVASwimmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVASwimmer.h; sourceTree = "<group>"; };
 		049759A21B43D84B009EBC06 /* EVASwimmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVASwimmer.m; sourceTree = "<group>"; };
+		04AC35191B446173003BC148 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		043BF4331B42D51C00CA725A = {
 			isa = PBXGroup;
 			children = (
+				04AC35191B446173003BC148 /* Default-568h@2x.png */,
 				043BF4651B42D54700CA725A /* task.rtf */,
 				043BF43E1B42D51C00CA725A /* lesson7 */,
 				043BF4581B42D51E00CA725A /* lesson7Tests */,
@@ -267,6 +270,7 @@
 			files = (
 				043BF44D1B42D51D00CA725A /* Images.xcassets in Resources */,
 				043BF4661B42D54700CA725A /* task.rtf in Resources */,
+				04AC351A1B446173003BC148 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

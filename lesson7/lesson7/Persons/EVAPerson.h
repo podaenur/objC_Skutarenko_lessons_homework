@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, EVAPersonSex) {
+  EVAPersonSexMan,
+  EVAPersonSexWoman
+};
+
+NSString * NSStringFromEVAPersonSex(EVAPersonSex aSex);
+
 @interface EVAPerson : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) CGFloat height;
