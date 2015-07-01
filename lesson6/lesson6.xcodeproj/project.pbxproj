@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0497598C1B43CDBE009EBC06 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0497598B1B43CDBE009EBC06 /* Default-568h@2x.png */; };
 		04CF31BD1B3708F200BC2199 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF31BC1B3708F200BC2199 /* main.m */; };
 		04CF31C01B3708F200BC2199 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF31BF1B3708F200BC2199 /* AppDelegate.m */; };
 		04CF31C81B3708F200BC2199 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CF31C71B3708F200BC2199 /* Images.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0497598B1B43CDBE009EBC06 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		04CF31B71B3708F200BC2199 /* lesson6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CF31BB1B3708F200BC2199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04CF31BC1B3708F200BC2199 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		04CF31AE1B3708F200BC2199 = {
 			isa = PBXGroup;
 			children = (
+				0497598B1B43CDBE009EBC06 /* Default-568h@2x.png */,
 				04CF31E01B37090400BC2199 /* task.rtf */,
 				04CF31B91B3708F200BC2199 /* lesson6 */,
 				04CF31D31B3708F200BC2199 /* lesson6Tests */,
@@ -193,6 +196,7 @@
 			files = (
 				04CF31E11B37090400BC2199 /* task.rtf in Resources */,
 				04CF31C81B3708F200BC2199 /* Images.xcassets in Resources */,
+				0497598C1B43CDBE009EBC06 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
