@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>lesson5_MRC.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>04FF9DE31B36B3570009D146</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7A401B3C1CBA941E00F8E9C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
