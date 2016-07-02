@@ -190,6 +190,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="i9y-Tr-BdE"/>
                     <connections>
+                        <outlet property="dateOfBirthField" destination="sMx-sW-6gy" id="1xs-SH-Tif"/>
+                        <outlet property="firstNameField" destination="cFg-Hd-rIv" id="hVh-1B-A2o"/>
+                        <outlet property="genderControl" destination="Sl9-4e-dBD" id="uhT-bq-uhp"/>
+                        <outlet property="gradeField" destination="8Ar-4l-l5G" id="JXW-V8-ndr"/>
+                        <outlet property="lastNameField" destination="sFd-3M-Tdv" id="ZEE-Lh-rF6"/>
                         <outletCollection property="fieldsChain" destination="cFg-Hd-rIv" id="mz2-Fa-jZc"/>
                         <outletCollection property="fieldsChain" destination="sFd-3M-Tdv" id="gR8-8W-07H"/>
                         <outletCollection property="fieldsChain" destination="sMx-sW-6gy" id="8qE-q5-bt5"/>

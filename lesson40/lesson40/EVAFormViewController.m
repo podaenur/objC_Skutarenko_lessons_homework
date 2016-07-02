@@ -10,7 +10,13 @@
 #import "EVAStudent.h"
 
 @interface EVAFormViewController () <UITextFieldDelegate>
+
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *fieldsChain;
+@property (weak, nonatomic) IBOutlet UITextField *firstNameField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameField;
+@property (weak, nonatomic) IBOutlet EVABirthdayField *dateOfBirthField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *genderControl;
+@property (weak, nonatomic) IBOutlet EVANumberField *gradeField;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapAnywhere;
 
