@@ -22,4 +22,10 @@ typedef NS_ENUM(NSUInteger, EVAGender) {
 @property (nonatomic, assign) EVAGender gender;
 @property (nonatomic, assign) CGFloat grade;
 
++ (instancetype)createStudentFirstName:(NSString *)firstName
+                              lastName:(NSString *)lastName
+                           dateOfBirth:(NSDate *)dateOfBirth
+                                gender:(EVAGender)gender
+                                 grade:(CGFloat)grade;
+
 @end

@@ -11,6 +11,22 @@
 @implementation EVAStudent
 
 #pragma mark - Life cycle
+
++ (instancetype)createStudentFirstName:(NSString *)firstName
+                              lastName:(NSString *)lastName
+                           dateOfBirth:(NSDate *)dateOfBirth
+                                gender:(EVAGender)gender
+                                 grade:(CGFloat)grade {
+    EVAStudent *student = [[EVAStudent alloc] init];
+    student.firstName = firstName;
+    student.lastName = lastName;
+    student.dateOfBirth = dateOfBirth;
+    student.gender = gender;
+    student.grade = grade;
+    
+    return student;
+}
+
 #pragma mark - Custom Accessors
 #pragma mark - Actions
 #pragma mark - Public
