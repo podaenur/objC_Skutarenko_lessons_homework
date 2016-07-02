@@ -45,7 +45,7 @@ static NSString *const EVANumberFieldRegexPattern = @
 - (CGFloat)gradeValue {
     //  ???: не могу понять, на сколько возможно это для различных локалей
     NSString *valueString = [self.text stringByReplacingOccurrencesOfString:@"," withString:@"."];
-    return (CGFLOAT_IS_DOUBLE) ? valueString.doubleValue : valueString.floatValue;
+    return (CGFLOAT_IS_DOUBLE) ? (CGFloat)valueString.doubleValue : (CGFloat)valueString.floatValue;
 }
 
 #pragma mark - Private

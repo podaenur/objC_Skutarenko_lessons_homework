@@ -137,7 +137,7 @@
 #pragma mark UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return FLT_EPSILON;
+    return (CGFLOAT_IS_DOUBLE) ? DBL_EPSILON : FLT_EPSILON;
 }
 
 #pragma mark UITextFieldDelegate
