@@ -11,5 +11,6 @@
 @interface EVANumberField : EVAAbstractField
 
 - (void)setGradeValue:(CGFloat)grade;
+- (CGFloat)gradeValue;
 
 @end

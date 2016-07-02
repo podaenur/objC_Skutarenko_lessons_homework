@@ -51,6 +51,19 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSTimeInterval adultAge = ((40 * 365) + (20 / 4)) * (24 * 60 * 60);
+        self.controllerModel = [EVAStudent createStudentFirstName:@"Ira"
+                                                         lastName:@"Sidorova"
+                                                      dateOfBirth:[NSDate dateWithTimeInterval:-adultAge sinceDate:[NSDate date]]
+                                                           gender:EVAGenderFemale
+                                                            grade:3.2];
+    });
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
@@ -58,12 +71,34 @@
 }
 
 #pragma mark - Custom Accessors
+
 #pragma mark - Actions
+
+- (IBAction)onFieldValueChanged:(UITextField *)sender {
+    if ([sender isEqual:self.firstNameField]) {
+        self.controllerModel.firstName = self.firstNameField.text;
+    } else if ([sender isEqual:self.lastNameField]) {
+        self.controllerModel.lastName = self.lastNameField.text;
+    } else if ([sender isEqual:self.dateOfBirthField]) {
+        self.controllerModel.dateOfBirth = [self.dateOfBirthField currentDate];
+    } else if ([sender isEqual:self.gradeField]) {
+        self.controllerModel.grade = [self.gradeField gradeValue];
+    }
+}
+
+- (IBAction)onSegmentChanged:(UISegmentedControl *)sender {
+    self.controllerModel.gender = sender.selectedSegmentIndex;
+}
+
 #pragma mark - Public
 
 #pragma mark - Private
 
 - (void)configureByModel {
+    if (!self.isViewLoaded) {
+        return;
+    }
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         self.firstNameField.text = self.controllerModel.firstName;
         self.lastNameField.text = self.controllerModel.lastName;

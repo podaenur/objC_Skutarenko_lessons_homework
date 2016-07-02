@@ -48,6 +48,7 @@
 
 - (void)onDatePickerValueChanged:(UIDatePicker *)sender {
     self.text = [self.formatter stringFromDate:sender.date];
+    [self sendActionsForControlEvents:UIControlEventEditingChanged];
 }
 
 #pragma mark - Public

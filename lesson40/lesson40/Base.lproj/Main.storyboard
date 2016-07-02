@@ -21,6 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1254" y="272"/>
         </scene>
         <!--Form View Controller-->
         <scene sceneID="9IW-QR-E8x">
@@ -29,7 +30,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="CFF-ba-wtC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="C7R-t5-P1o">
                                 <cells>
@@ -45,6 +46,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     <connections>
+                                                        <action selector="onFieldValueChanged:" destination="k0V-0o-shs" eventType="editingChanged" id="JUu-rW-jMB"/>
                                                         <outlet property="delegate" destination="k0V-0o-shs" id="Rwf-iM-0DO"/>
                                                     </connections>
                                                 </textField>
@@ -82,6 +84,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     <connections>
+                                                        <action selector="onFieldValueChanged:" destination="k0V-0o-shs" eventType="editingChanged" id="B6r-IK-yqW"/>
                                                         <outlet property="delegate" destination="k0V-0o-shs" id="KMc-na-4an"/>
                                                     </connections>
                                                 </textField>
@@ -106,6 +109,9 @@
                                                     <rect key="frame" x="121" y="7" width="463" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onFieldValueChanged:" destination="k0V-0o-shs" eventType="editingChanged" id="yS6-gu-lPW"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfC-hK-f0x">
                                                     <rect key="frame" x="16" y="11" width="97" height="21"/>
@@ -142,6 +148,9 @@
                                                         <segment title="Male"/>
                                                         <segment title="Female"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="onSegmentChanged:" destination="k0V-0o-shs" eventType="valueChanged" id="IKG-Zt-ZTR"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -163,6 +172,9 @@
                                                     <rect key="frame" x="71" y="7" width="513" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="onFieldValueChanged:" destination="k0V-0o-shs" eventType="editingChanged" id="M3k-nN-h6Q"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTR-uE-XgJ">
                                                     <rect key="frame" x="16" y="11" width="47" height="21"/>
@@ -203,7 +215,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoc-YP-4eM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1237" y="1162"/>
+            <point key="canvasLocation" x="1254" y="1162"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nR3-pB-CJv">

@@ -42,6 +42,12 @@ static NSString *const EVANumberFieldRegexPattern = @
     self.text = [NSNumberFormatter eva_gradeStringFromGrade:grade];
 }
 
+- (CGFloat)gradeValue {
+    //  ???: не могу понять, на сколько возможно это для различных локалей
+    NSString *valueString = [self.text stringByReplacingOccurrencesOfString:@"," withString:@"."];
+    return (CGFLOAT_IS_DOUBLE) ? valueString.doubleValue : valueString.floatValue;
+}
+
 #pragma mark - Private
 #pragma mark - Segue
 #pragma mark - Animations
