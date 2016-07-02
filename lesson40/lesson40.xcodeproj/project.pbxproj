@@ -16,6 +16,7 @@
 		7A2921581D27CF87003BAEB0 /* EVAStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2921571D27CF87003BAEB0 /* EVAStudent.m */; };
 		7A29215D1D27D5A1003BAEB0 /* EVAFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A29215C1D27D5A1003BAEB0 /* EVAFormViewController.m */; };
 		7A2921611D27E120003BAEB0 /* EVANumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2921601D27E120003BAEB0 /* EVANumberField.m */; };
+		7A29216B1D281D12003BAEB0 /* NSNumberFormatter+EVAGradeFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A29216A1D281D12003BAEB0 /* NSNumberFormatter+EVAGradeFormat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		7A29215C1D27D5A1003BAEB0 /* EVAFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAFormViewController.m; sourceTree = "<group>"; };
 		7A29215F1D27E120003BAEB0 /* EVANumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVANumberField.h; sourceTree = "<group>"; };
 		7A2921601D27E120003BAEB0 /* EVANumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVANumberField.m; sourceTree = "<group>"; };
+		7A2921691D281D12003BAEB0 /* NSNumberFormatter+EVAGradeFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumberFormatter+EVAGradeFormat.h"; sourceTree = "<group>"; };
+		7A29216A1D281D12003BAEB0 /* NSNumberFormatter+EVAGradeFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumberFormatter+EVAGradeFormat.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 		7A29213A1D27C84F003BAEB0 /* lesson40 */ = {
 			isa = PBXGroup;
 			children = (
+				7A2921681D281CE6003BAEB0 /* _Utils */,
 				7A29215E1D27E107003BAEB0 /* _Views */,
 				7A29215A1D27D58B003BAEB0 /* _Controllers */,
 				7A2921591D27D584003BAEB0 /* _Models */,
@@ -114,6 +118,15 @@
 				7A2921601D27E120003BAEB0 /* EVANumberField.m */,
 			);
 			name = _Views;
+			sourceTree = "<group>";
+		};
+		7A2921681D281CE6003BAEB0 /* _Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7A2921691D281D12003BAEB0 /* NSNumberFormatter+EVAGradeFormat.h */,
+				7A29216A1D281D12003BAEB0 /* NSNumberFormatter+EVAGradeFormat.m */,
+			);
+			name = _Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +205,7 @@
 				7A2921611D27E120003BAEB0 /* EVANumberField.m in Sources */,
 				7A29213D1D27C84F003BAEB0 /* main.m in Sources */,
 				7A2921581D27CF87003BAEB0 /* EVAStudent.m in Sources */,
+				7A29216B1D281D12003BAEB0 /* NSNumberFormatter+EVAGradeFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
