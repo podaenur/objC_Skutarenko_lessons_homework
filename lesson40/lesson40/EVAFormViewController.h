@@ -8,6 +8,10 @@
 
 @import UIKit;
 
+@class EVAStudent;
+
 @interface EVAFormViewController : UITableViewController
+
+@property (nonatomic, strong) EVAStudent *controllerModel;
 
 @end
