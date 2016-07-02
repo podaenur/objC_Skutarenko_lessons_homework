@@ -6,8 +6,10 @@
 //  Copyright © 2016 Evgeniy Akhmerov. All rights reserved.
 //
 
-@import UIKit;
+#import "EVAAbstractField.h"
 
-@interface EVANumberField : UITextField
+@interface EVANumberField : EVAAbstractField
+
+- (void)setGradeValue:(CGFloat)grade;
 
 @end

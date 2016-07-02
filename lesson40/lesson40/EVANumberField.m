@@ -7,6 +7,7 @@
 //
 
 #import "EVANumberField.h"
+#import "NSNumberFormatter+EVAGradeFormat.h"
 
 //  0
 //  0,
@@ -33,41 +34,15 @@ static NSString *const EVANumberFieldRegexPattern = @
 @implementation EVANumberField
 
 #pragma mark - Life cycle
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
 #pragma mark - Custom Accessors
 #pragma mark - Actions
 #pragma mark - Public
 
-#pragma mark - Private
-
-- (void)setup {
-    self.delegate = self;
+- (void)setGradeValue:(CGFloat)grade {
+    self.text = [NSNumberFormatter eva_gradeStringFromGrade:grade];
 }
 
+#pragma mark - Private
 #pragma mark - Segue
 #pragma mark - Animations
 
@@ -83,6 +58,12 @@ static NSString *const EVANumberFieldRegexPattern = @
                                                 options:NSMatchingReportCompletion
                                                   range:NSMakeRange(0, fullString.length)];
     return (fullString.length == 0) ?: (matches == 1);
+}
+
+#pragma mark EVAAbstractFieldConfigurable
+
+- (void)setup {
+    self.delegate = self;
 }
 
 #pragma mark - Notifications handlers
