@@ -9,7 +9,8 @@
 #import "EVAFormViewController.h"
 #import "EVAStudent.h"
 
-@interface EVAFormViewController ()
+@interface EVAFormViewController () <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *fieldsChain;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapAnywhere;
 
@@ -63,9 +64,31 @@
         [self.gradeField setGradeValue:self.controllerModel.grade];
     });
 }
+
+- (void)passToNextResponder:(UIResponder *)sender {
+    NSUInteger index = [self.fieldsChain indexOfObject:sender];
+    
+    if (index + 1 == self.fieldsChain.count) {
+        [self.fieldsChain[index] resignFirstResponder];
+    } else {
+        UIResponder *next = self.fieldsChain[index + 1];
+        if ([next canBecomeFirstResponder]) {
+            [next becomeFirstResponder];
+        }
+    }
+}
+
 #pragma mark - Segue
 #pragma mark - Animations
+
 #pragma mark - Protocol conformance
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self passToNextResponder:textField];
+    return NO;
+}
+
 #pragma mark - Notifications handlers
 
 #pragma mark - Gestures handlers

@@ -44,6 +44,9 @@
                                                     <rect key="frame" x="104" y="7" width="480" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="k0V-0o-shs" id="Rwf-iM-0DO"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-dB-aL2">
                                                     <rect key="frame" x="16" y="11" width="80" height="21"/>
@@ -78,6 +81,9 @@
                                                     <rect key="frame" x="104" y="7" width="480" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="k0V-0o-shs" id="KMc-na-4an"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -183,6 +189,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="i9y-Tr-BdE"/>
+                    <connections>
+                        <outletCollection property="fieldsChain" destination="cFg-Hd-rIv" id="mz2-Fa-jZc"/>
+                        <outletCollection property="fieldsChain" destination="sFd-3M-Tdv" id="gR8-8W-07H"/>
+                        <outletCollection property="fieldsChain" destination="sMx-sW-6gy" id="8qE-q5-bt5"/>
+                        <outletCollection property="fieldsChain" destination="8Ar-4l-l5G" id="ZNO-Pb-jEU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoc-YP-4eM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
