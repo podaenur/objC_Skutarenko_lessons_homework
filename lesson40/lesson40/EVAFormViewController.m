@@ -88,6 +88,12 @@
 #pragma mark - Animations
 
 #pragma mark - Protocol conformance
+#pragma mark UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return FLT_EPSILON;
+}
+
 #pragma mark UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
