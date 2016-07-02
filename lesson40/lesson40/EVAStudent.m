@@ -8,6 +8,13 @@
 
 #import "EVAStudent.h"
 
+NSString *NSStringFromEVAGender(EVAGender g) {
+    switch (g) {
+        case EVAGenderMale: return @"male";
+        case EVAGenderFemale: return @"female";
+    }
+}
+
 @implementation EVAStudent
 
 #pragma mark - Life cycle
@@ -30,7 +37,18 @@
 #pragma mark - Custom Accessors
 #pragma mark - Actions
 #pragma mark - Public
+
 #pragma mark - Private
+
+- (NSString *)debugDescription {
+    return [NSString stringWithFormat:@"\n"
+            "first name: %@\n"
+            "last name: %@\n"
+            "date of birth: %@\n"
+            "gender: %@\n"
+            "grade: %.2f", self.firstName, self.lastName, self.dateOfBirth, NSStringFromEVAGender(self.gender), (double)self.grade];
+}
+
 #pragma mark - Segue
 #pragma mark - Animations
 #pragma mark - Protocol conformance

@@ -60,7 +60,7 @@
                                                          lastName:@"Sidorova"
                                                       dateOfBirth:[NSDate dateWithTimeInterval:-adultAge sinceDate:[NSDate date]]
                                                            gender:EVAGenderFemale
-                                                            grade:3.2];
+                                                            grade:4.1];
     });
 }
 
@@ -71,6 +71,13 @@
 }
 
 #pragma mark - Custom Accessors
+
+- (void)setControllerModel:(EVAStudent *)controllerModel {
+    _controllerModel = controllerModel;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self configureByModel];
+    });
+}
 
 #pragma mark - Actions
 
@@ -84,10 +91,12 @@
     } else if ([sender isEqual:self.gradeField]) {
         self.controllerModel.grade = [self.gradeField gradeValue];
     }
+    NSLog(@"%@", [self.controllerModel debugDescription]);
 }
 
 - (IBAction)onSegmentChanged:(UISegmentedControl *)sender {
     self.controllerModel.gender = sender.selectedSegmentIndex;
+    NSLog(@"%@", [self.controllerModel debugDescription]);
 }
 
 #pragma mark - Public
