@@ -13,6 +13,8 @@
 		7A2921481D27C84F003BAEB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A2921471D27C84F003BAEB0 /* Assets.xcassets */; };
 		7A2921531D27C897003BAEB0 /* task.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7A2921521D27C897003BAEB0 /* task.rtf */; };
 		7A2921551D27CB3F003BAEB0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2921541D27CB3F003BAEB0 /* Default-568h@2x.png */; };
+		7A2921581D27CF87003BAEB0 /* EVAStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2921571D27CF87003BAEB0 /* EVAStudent.m */; };
+		7A29215D1D27D5A1003BAEB0 /* EVAFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A29215C1D27D5A1003BAEB0 /* EVAFormViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,10 @@
 		7A29214C1D27C84F003BAEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A2921521D27C897003BAEB0 /* task.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = task.rtf; sourceTree = "<group>"; };
 		7A2921541D27CB3F003BAEB0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7A2921561D27CF87003BAEB0 /* EVAStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVAStudent.h; sourceTree = "<group>"; };
+		7A2921571D27CF87003BAEB0 /* EVAStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAStudent.m; sourceTree = "<group>"; };
+		7A29215B1D27D5A1003BAEB0 /* EVAFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVAFormViewController.h; sourceTree = "<group>"; };
+		7A29215C1D27D5A1003BAEB0 /* EVAFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAFormViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +65,13 @@
 		7A29213A1D27C84F003BAEB0 /* lesson40 */ = {
 			isa = PBXGroup;
 			children = (
+				7A29215A1D27D58B003BAEB0 /* _Controllers */,
+				7A2921591D27D584003BAEB0 /* _Models */,
 				7A29213E1D27C84F003BAEB0 /* AppDelegate.h */,
 				7A29213F1D27C84F003BAEB0 /* AppDelegate.m */,
-				7A2921441D27C84F003BAEB0 /* Main.storyboard */,
 				7A2921471D27C84F003BAEB0 /* Assets.xcassets */,
 				7A29214C1D27C84F003BAEB0 /* Info.plist */,
+				7A2921441D27C84F003BAEB0 /* Main.storyboard */,
 				7A29213B1D27C84F003BAEB0 /* Supporting Files */,
 			);
 			path = lesson40;
@@ -75,6 +83,24 @@
 				7A29213C1D27C84F003BAEB0 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A2921591D27D584003BAEB0 /* _Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A2921561D27CF87003BAEB0 /* EVAStudent.h */,
+				7A2921571D27CF87003BAEB0 /* EVAStudent.m */,
+			);
+			name = _Models;
+			sourceTree = "<group>";
+		};
+		7A29215A1D27D58B003BAEB0 /* _Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A29215B1D27D5A1003BAEB0 /* EVAFormViewController.h */,
+				7A29215C1D27D5A1003BAEB0 /* EVAFormViewController.m */,
+			);
+			name = _Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2921401D27C84F003BAEB0 /* AppDelegate.m in Sources */,
+				7A29215D1D27D5A1003BAEB0 /* EVAFormViewController.m in Sources */,
 				7A29213D1D27C84F003BAEB0 /* main.m in Sources */,
+				7A2921581D27CF87003BAEB0 /* EVAStudent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +289,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = (
 					"-Weverything",
-					"-Wall",
+					"-Wno-objc-missing-property-synthesis",
+					"-Wno-gnu",
+					"-Wno-float-equal",
+					"-Wno-nullable-to-nonnull-conversion",
+					"-Wno-direct-ivar-access",
+					"-Wno-disabled-macro-expansion",
 				);
 			};
 			name = Debug;
@@ -278,7 +311,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = (
 					"-Weverything",
-					"-Wall",
+					"-Wno-objc-missing-property-synthesis",
+					"-Wno-gnu",
+					"-Wno-float-equal",
+					"-Wno-nullable-to-nonnull-conversion",
+					"-Wno-direct-ivar-access",
+					"-Wno-disabled-macro-expansion",
 				);
 			};
 			name = Release;
