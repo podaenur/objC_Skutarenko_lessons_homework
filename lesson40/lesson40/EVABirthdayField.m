@@ -54,8 +54,14 @@
 #pragma mark - Public
 
 - (void)setCurrentDate:(NSDate *)date {
+    if (!date) {
+        date = [NSDate date];
+        self.text = nil;
+    } else {
+        self.text = [self.formatter stringFromDate:date];
+    }
+    
     [self.datePicker setDate:date animated:YES];
-    self.text = [self.formatter stringFromDate:date];
 }
 
 - (NSDate *)currentDate {

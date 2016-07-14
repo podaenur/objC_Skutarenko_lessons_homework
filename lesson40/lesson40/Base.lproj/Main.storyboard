@@ -31,6 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="C7R-t5-P1o">
                                 <cells>
@@ -200,7 +201,13 @@
                             <outlet property="delegate" destination="k0V-0o-shs" id="xVr-Ql-aeA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="i9y-Tr-BdE"/>
+                    <navigationItem key="navigationItem" id="i9y-Tr-BdE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="wXB-mz-rEd">
+                            <connections>
+                                <action selector="onClean:" destination="k0V-0o-shs" id="TV8-ZK-cHU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateOfBirthField" destination="sMx-sW-6gy" id="1xs-SH-Tif"/>
                         <outlet property="firstNameField" destination="cFg-Hd-rIv" id="hVh-1B-A2o"/>

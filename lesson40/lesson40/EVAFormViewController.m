@@ -37,6 +37,7 @@
                                                   dateOfBirth:[NSDate dateWithTimeInterval:-adultAge sinceDate:[NSDate date]]
                                                        gender:EVAGenderMale
                                                         grade:3.2];
+    [self.controllerModel registerObserver:self];
     
     self.tapAnywhere = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapAnywhere:)];
 }
@@ -99,6 +100,11 @@
     NSLog(@"%@", [self.controllerModel debugDescription]);
 }
 
+- (IBAction)onClean:(id)sender {
+    [self.controllerModel clean];
+    [self configureByModel];
+}
+
 #pragma mark - Public
 
 #pragma mark - Private
@@ -130,6 +136,19 @@
     }
 }
 
+- (NSString *)kindByIndex:(NSInteger)index {
+    static NSArray *kinds = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        kinds = @[ @"NSKeyValueChangeSetting",
+                   @"NSKeyValueChangeInsertion",
+                   @"NSKeyValueChangeRemoval",
+                   @"NSKeyValueChangeReplacement" ];
+    });
+    
+    return (index > 0 && (index + 2) < (NSInteger)kinds.count ) ? kinds[index - 1] : @"unspecified";
+}
+
 #pragma mark - Segue
 #pragma mark - Animations
 
@@ -156,6 +175,38 @@
 }
 
 #pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if (context != EVAStudentContext) {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    } else {
+        
+        
+        NSInteger kind = [change[@"kind"] integerValue];
+        id newValue = change[@"new"];
+        id oldValue = change[@"old"];
+        NSNumber *prior = change[@"notificationIsPrior"];
+        
+        NSLog(@"****************************************");
+        NSLog(@"%@ (%@)", [object description], keyPath);
+        NSLog(@"kind %@", [self kindByIndex:kind]);
+        
+        if (newValue) {
+            NSLog(@"new: %@", [newValue description]);
+        }
+        
+        if (oldValue) {
+            NSLog(@"old: %@", [oldValue description]);
+        }
+        
+        if (prior) {
+            NSLog(@"%@ prior", [prior boolValue] ? @"is" : @"is not");
+        }
+        
+        NSLog(@"****************************************\n\n");
+    }
+}
+
 #pragma mark - NSCopying
 #pragma mark - NSObject
 

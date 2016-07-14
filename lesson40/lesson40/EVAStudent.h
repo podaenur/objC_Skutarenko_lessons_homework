@@ -9,6 +9,14 @@
 @import Foundation;
 @import UIKit;
 
+extern void *EVAStudentContext;
+
+extern NSString *const EVAStudentFirstName;
+extern NSString *const EVAStudentLastName;
+extern NSString *const EVAStudentDateOfBirth;
+extern NSString *const EVAStudentGender;
+extern NSString *const EVAStudentGrade;
+
 typedef NS_ENUM(NSUInteger, EVAGender) {
     EVAGenderMale,
     EVAGenderFemale
@@ -27,5 +35,8 @@ typedef NS_ENUM(NSUInteger, EVAGender) {
                            dateOfBirth:(NSDate *)dateOfBirth
                                 gender:(EVAGender)gender
                                  grade:(CGFloat)grade;
+
+- (void)clean;
+- (void)registerObserver:(id)observer;
 
 @end

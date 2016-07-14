@@ -6,7 +6,25 @@
 //  Copyright © 2016 Evgeniy Akhmerov. All rights reserved.
 //
 
+#define DATE(interval) [NSDate dateWithTimeIntervalSinceNow:interval]
+
 #import "EVAStudent.h"
+
+void *EVAStudentContext = &EVAStudentContext;
+
+NSString *const EVAStudentFirstName   = @"firstName";
+NSString *const EVAStudentLastName    = @"lastName";
+NSString *const EVAStudentDateOfBirth = @"dateOfBirth";
+NSString *const EVAStudentGender      = @"gender";
+NSString *const EVAStudentGrade       = @"grade";
+
+NSArray *EVAStudentKeyPathes() {
+    return @[ EVAStudentFirstName,
+              EVAStudentLastName,
+              EVAStudentDateOfBirth,
+              EVAStudentGender,
+              EVAStudentGrade ];
+}
 
 NSString *NSStringFromEVAGender(EVAGender g) {
     switch (g) {
@@ -14,6 +32,12 @@ NSString *NSStringFromEVAGender(EVAGender g) {
         case EVAGenderFemale: return @"female";
     }
 }
+
+@interface EVAStudent ()
+
+@property (nonatomic, weak) id observer;
+
+@end
 
 @implementation EVAStudent
 
@@ -34,9 +58,37 @@ NSString *NSStringFromEVAGender(EVAGender g) {
     return student;
 }
 
+- (void)dealloc {
+    [self addOrRemoveSelfObserverKeyPathes:EVAStudentKeyPathes() shouldRemove:YES];
+}
+
 #pragma mark - Custom Accessors
 #pragma mark - Actions
 #pragma mark - Public
+
+- (void)clean {
+    [self willChangeValueForKey:EVAStudentFirstName];
+    _firstName = nil;
+    [self didChangeValueForKey:EVAStudentFirstName];
+    _lastName = nil;
+    _dateOfBirth = nil;
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wassign-enum"
+    _gender = NSUIntegerMax;
+#pragma clang diagnostic pop
+    _grade = 0.f;
+}
+
+- (void)registerObserver:(id)observer {
+    if (self.observer) {
+        [self addOrRemoveSelfObserverKeyPathes:EVAStudentKeyPathes() shouldRemove:YES];
+    }
+    
+    self.observer = observer;
+    
+    [self addOrRemoveSelfObserverKeyPathes:EVAStudentKeyPathes() shouldRemove:NO];
+}
 
 #pragma mark - Private
 
@@ -47,6 +99,27 @@ NSString *NSStringFromEVAGender(EVAGender g) {
             "date of birth: %@\n"
             "gender: %@\n"
             "grade: %.2f", self.firstName, self.lastName, self.dateOfBirth, NSStringFromEVAGender(self.gender), (double)self.grade];
+}
+
+- (void)addOrRemoveSelfObserverKeyPathes:(NSArray <NSString *>*)keyPathes shouldRemove:(BOOL)shouldRemove {
+    NSKeyValueObservingOptions options =
+    (
+     NSKeyValueObservingOptionNew
+     |
+     NSKeyValueObservingOptionOld
+     |
+     NSKeyValueObservingOptionInitial
+     |
+     NSKeyValueObservingOptionPrior
+     );
+    
+    for (NSString *keyPath in keyPathes) {
+        if (!shouldRemove) {
+            [self addObserver:self.observer forKeyPath:keyPath options:options context:EVAStudentContext];
+        } else {
+            [self removeObserver:self.observer forKeyPath:keyPath];
+        }
+    }
 }
 
 #pragma mark - Segue
