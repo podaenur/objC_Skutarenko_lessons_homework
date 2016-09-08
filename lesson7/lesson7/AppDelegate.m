@@ -34,35 +34,22 @@
   
   NSArray *group = @[ swimmer, dog, runner, idler, mouse, bicyclist ];
   
-  for (id obj in group) {
-    if ([obj isKindOfClass:[EVAAnimal class]]) {
-      [self letAnimalAction:obj];
-    } else if ([obj isKindOfClass:[EVAPerson class]]) {
-      [self letPersonAction:obj];
-    }
-  }
+  [group enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self letActionForCreature:obj];
+  }];
+  
   return YES;
 }
 
 #pragma mark - Private methods
 
-- (void)letAnimalAction:(EVAAnimal *)anAnimal {
-  [self letActionForCreature:anAnimal];
-}
-
-- (void)letPersonAction:(EVAPerson *)aPerson {
-  [self letActionForCreature:aPerson];
-}
-
 - (void)letActionForCreature:(id)aCreature {
-  if ([aCreature isKindOfClass:[EVAAnimal class]]) {
+  if ([aCreature respondsToSelector:@selector(displaySelf)]) {
     [aCreature displaySelf];
+  }
+  
+  if ([aCreature respondsToSelector:@selector(movement)]) {
     [aCreature movement];
-  } else if ([aCreature isKindOfClass:[EVAPerson class]]) {
-    [aCreature displaySelf];
-    [aCreature movement];
-  } else {
-    return;
   }
   
   if ([aCreature conformsToProtocol:@protocol(EVAJumpersProtocol)]) {
