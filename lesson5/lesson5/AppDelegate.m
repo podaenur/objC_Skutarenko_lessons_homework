@@ -92,8 +92,10 @@
   
   for (id obj in sorted) {
     if ([obj isKindOfClass:[EVAPerson class]]) {
+      NSLog(@"Human");
       NSLog(@"name: %@\n", [(EVAPerson *)obj name]);
     } else if ([obj isKindOfClass:[EVAAnimal class]]) {
+      NSLog(@"Animal");
       NSLog(@"nickname: %@\n", [(EVAAnimal *)obj nickname]);
     }
   }
